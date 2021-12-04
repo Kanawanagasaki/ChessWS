@@ -241,6 +241,7 @@ class Board
 
     public Draw(ctx:CanvasRenderingContext2D)
     {
+        // Drawing board itself
         for(let iy = 0; iy < 8; iy++)
         {
             for(let ix = 0; ix < 8; ix++)
@@ -250,6 +251,8 @@ class Board
             }
         }
         
+        // If player dragging any piece we will draw possible moves of this piece here
+        // on top of the board but below of all other pieces
         if(this._selectedPiece !== null)
         {
             for(let pos of this._possibleMoves)
@@ -273,6 +276,7 @@ class Board
             }
         }
 
+        // Rendering cells coords
         for(let iy = 0; iy < 8; iy++)
         {
             for(let ix = 0; ix < 8; ix++)
@@ -286,10 +290,12 @@ class Board
             }
         }
 
+        // Rendering all pieces and if player holding piece ignore it
         for(let piece of this._pieces)
             if(piece !== this._selectedPiece)
                 piece.Draw(ctx);
         
+        // Rendering holding piece on top of every other piece
         if(this._selectedPiece !== null)
             this._selectedPiece.DrawDraggin(ctx, this._mouseX, this._mouseY);
 
