@@ -26,12 +26,8 @@ class Knight extends Piece
         {
             if(pos.x < 0 || pos.x > 7 || pos.y < 0 || pos.y > 7) continue;
 
-            if((pos.x) in pieces[pos.y])
-            {
-                if(pieces[pos.y][pos.x].IsWhite != this.IsWhite)
-                    ret.push({x:pos.x, y:pos.y});
+            if((pos.x) in pieces[pos.y] && pieces[pos.y][pos.x].IsWhite == this.IsWhite)
                 continue;
-            }
 
             ret.push({x:pos.x, y:pos.y});
         }
