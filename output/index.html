@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chess :></title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Chess is chess, you know, it is just a chess, there are white and black things and you move them...">
+    
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="placeholder">
+            <div id="welcome">
+                <h1>Chess</h1>
+                <h4>Your nickname?</h4>
+                <div>
+                    <input id="nicknameInput" type="text"/>
+                    <button id="loginBtn">Let's go</button>
+                </div>
+                <p id="loginError"></p>
+            </div>
+            <div class="error" style="display: none">
+                <h2>
+                    Something went terribly wrong, try reload page
+                </p>
+            </div>
+            <div id="chess" style="display:none;">
+                <h4 id="chessDisplayText">Looking for opponent</h4>
+                <canvas id="canvas" width="640" height="640"></canvas>
+            </div>
+        </div>
+        
+        <script src="index.js"></script>
+    </body>
+</html>

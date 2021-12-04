@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+* {
+    font-family: Nunito;
+}
+
+html {
+    background: black;
+    color: white;
+}
+
+h1, h4 {
+    margin: 0.5rem 0;
+}
+
+.placeholder {
+    position: fixed;
+    top: 0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome {
+    text-align: center;
+}
+
+#loginError {
+    color: red;
+    margin-top: 0.5rem;
+}
+
+#chessDisplayText {
+    text-align: center;
+}
