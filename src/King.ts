@@ -33,19 +33,19 @@ class King extends Piece
 
         if(this.IsWhite && this.X == 4 && this.Y == 0 && this.CanCastle)
         {
-            if(Board.GetCellTypeAt(pieces, 5,0) == "empty" &&
-                Board.GetCellTypeAt(pieces, 6,0) == "empty" &&
-                Board.GetCellTypeAt(pieces, 7,0) == "white" &&
+            if(Board.GetPieceColorAt(pieces, 5,0) == "empty" &&
+                Board.GetPieceColorAt(pieces, 6,0) == "empty" &&
+                Board.GetPieceColorAt(pieces, 7,0) == "white" &&
                 pieces[0][7] instanceof Rook &&
                 pieces[0][7].CanCastle &&
                 Board.GetPiecesThatCanMoveTo(pieces, !this.IsWhite, 4, 0).length == 0 &&
                 Board.GetPiecesThatCanMoveTo(pieces, !this.IsWhite, 5, 0).length == 0 &&
                 Board.GetPiecesThatCanMoveTo(pieces, !this.IsWhite, 6, 0).length == 0)
                 ret.push({x:6, y:0});
-            if(Board.GetCellTypeAt(pieces, 3,0) == "empty" &&
-                Board.GetCellTypeAt(pieces, 2,0) == "empty" &&
-                Board.GetCellTypeAt(pieces, 1,0) == "empty" &&
-                Board.GetCellTypeAt(pieces, 0,0) == "white" &&
+            if(Board.GetPieceColorAt(pieces, 3,0) == "empty" &&
+                Board.GetPieceColorAt(pieces, 2,0) == "empty" &&
+                Board.GetPieceColorAt(pieces, 1,0) == "empty" &&
+                Board.GetPieceColorAt(pieces, 0,0) == "white" &&
                 pieces[0][0] instanceof Rook &&
                 pieces[0][0].CanCastle &&
                 Board.GetPiecesThatCanMoveTo(pieces, !this.IsWhite, 4, 0).length == 0 &&
@@ -55,16 +55,16 @@ class King extends Piece
         }
         else if(!this.IsWhite && this.X == 4 && this.Y == 7 && this.CanCastle)
         {
-            if(Board.GetCellTypeAt(pieces, 5,7) == "empty" &&
-                Board.GetCellTypeAt(pieces, 6,7) == "empty" &&
-                Board.GetCellTypeAt(pieces, 7,7) == "black" &&
+            if(Board.GetPieceColorAt(pieces, 5,7) == "empty" &&
+                Board.GetPieceColorAt(pieces, 6,7) == "empty" &&
+                Board.GetPieceColorAt(pieces, 7,7) == "black" &&
                 pieces[7][7] instanceof Rook &&
                 pieces[7][7].CanCastle)
                 ret.push({x:6, y:7});
-            if(Board.GetCellTypeAt(pieces, 3,7) == "empty" &&
-                Board.GetCellTypeAt(pieces, 2,7) == "empty" &&
-                Board.GetCellTypeAt(pieces, 1,7) == "empty" &&
-                Board.GetCellTypeAt(pieces, 0,7) == "black" &&
+            if(Board.GetPieceColorAt(pieces, 3,7) == "empty" &&
+                Board.GetPieceColorAt(pieces, 2,7) == "empty" &&
+                Board.GetPieceColorAt(pieces, 1,7) == "empty" &&
+                Board.GetPieceColorAt(pieces, 0,7) == "black" &&
                 pieces[7][0] instanceof Rook &&
                 pieces[7][0].CanCastle)
                 ret.push({x:2, y:7});

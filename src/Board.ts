@@ -367,7 +367,7 @@ class Board
         return possibleMoves;
     }
 
-    public static GetCellTypeAt(pieces:{[row:number]:{[column:number]:Piece}}, x:number, y:number):"white"|"black"|"empty"|"outofbounds"
+    public static GetPieceColorAt(pieces:{[row:number]:{[column:number]:Piece}}, x:number, y:number):"white"|"black"|"empty"|"outofbounds"
     {
         if(x < 0 || x > 7 || y < 0 || y > 7) return "outofbounds";
         if(!(x in pieces[y])) return "empty";

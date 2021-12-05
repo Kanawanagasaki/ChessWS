@@ -27,20 +27,20 @@ class Pawn extends Piece
 
         if(this.IsWhite)
         {
-            if(Board.GetCellTypeAt(pieces, this.X + 1, this.Y + 1) == "black")
+            if(Board.GetPieceColorAt(pieces, this.X + 1, this.Y + 1) == "black")
                 ret.push({ x: this.X + 1, y: this.Y + 1 });
-            if(Board.GetCellTypeAt(pieces, this.X - 1, this.Y + 1) == "black")
+            if(Board.GetPieceColorAt(pieces, this.X - 1, this.Y + 1) == "black")
                 ret.push({ x: this.X - 1, y: this.Y + 1 });
 
             if(this.Y == 4)
             {
-                if(Board.GetCellTypeAt(pieces, this.X + 1, 4) == "black" &&
+                if(Board.GetPieceColorAt(pieces, this.X + 1, 4) == "black" &&
                     this.Board.LastPieceMoved == pieces[4][this.X + 1] &&
                     pieces[4][this.X + 1] instanceof Pawn &&
                     pieces[4][this.X + 1].PrevX == pieces[4][this.X + 1].X &&
                     pieces[4][this.X + 1].PrevY == 6)
                     ret.push({ x: this.X + 1, y: this.Y + 1 });
-                if(Board.GetCellTypeAt(pieces, this.X - 1, 4) == "black" &&
+                if(Board.GetPieceColorAt(pieces, this.X - 1, 4) == "black" &&
                     this.Board.LastPieceMoved == pieces[4][this.X - 1] &&
                     pieces[4][this.X - 1] instanceof Pawn &&
                     pieces[4][this.X - 1].PrevX == pieces[4][this.X - 1].X &&
@@ -50,20 +50,20 @@ class Pawn extends Piece
         }
         else
         {
-            if(Board.GetCellTypeAt(pieces, this.X + 1, this.Y - 1) == "white")
+            if(Board.GetPieceColorAt(pieces, this.X + 1, this.Y - 1) == "white")
                 ret.push({ x: this.X + 1, y: this.Y - 1 });
-            if(Board.GetCellTypeAt(pieces, this.X - 1, this.Y - 1) == "white")
+            if(Board.GetPieceColorAt(pieces, this.X - 1, this.Y - 1) == "white")
                 ret.push({ x: this.X - 1, y: this.Y - 1 });
 
             if(this.Y == 3)
             {
-                if(Board.GetCellTypeAt(pieces, this.X + 1, 3) == "white" &&
+                if(Board.GetPieceColorAt(pieces, this.X + 1, 3) == "white" &&
                     this.Board.LastPieceMoved == pieces[3][this.X + 1] &&
                     pieces[3][this.X + 1] instanceof Pawn &&
                     pieces[3][this.X + 1].PrevX == pieces[3][this.X + 1].X &&
                     pieces[3][this.X + 1].PrevY == 1)
                     ret.push({ x: this.X + 1, y: this.Y - 1 });
-                if(Board.GetCellTypeAt(pieces, this.X - 1, 3) == "white" &&
+                if(Board.GetPieceColorAt(pieces, this.X - 1, 3) == "white" &&
                     this.Board.LastPieceMoved == pieces[3][this.X - 1] &&
                     pieces[3][this.X - 1] instanceof Pawn &&
                     pieces[3][this.X - 1].PrevX == pieces[3][this.X - 1].X &&
@@ -82,7 +82,7 @@ class Pawn extends Piece
             if(this.Y == 7)
                 this.Board.Promotion(this.X, this.Y);
             if(this.Y == 5 && this.PrevY == 4 && this.X != this.PrevX
-                && Board.GetCellTypeAt(this.Board.Pieces, this.X, 4) == "black"
+                && Board.GetPieceColorAt(this.Board.Pieces, this.X, 4) == "black"
                 && this.Board.Pieces[4][this.X] instanceof Pawn
                 && this.Board.Pieces[4][this.X].PrevX == this.X
                 && this.Board.Pieces[4][this.X].PrevY == 6)
@@ -93,7 +93,7 @@ class Pawn extends Piece
             if(this.Y == 0)
                 this.Board.Promotion(this.X, this.Y);
             if(this.Y == 2 && this.PrevY == 3 && this.X != this.PrevX
-                && Board.GetCellTypeAt(this.Board.Pieces, this.X, 3) == "white"
+                && Board.GetPieceColorAt(this.Board.Pieces, this.X, 3) == "white"
                 && this.Board.Pieces[3][this.X] instanceof Pawn
                 && this.Board.Pieces[3][this.X].PrevX == this.X
                 && this.Board.Pieces[3][this.X].PrevY == 1)
